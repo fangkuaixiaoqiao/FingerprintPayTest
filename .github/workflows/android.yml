@@ -45,12 +45,12 @@ jobs:
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
       - name: Upload Apk
-        uses: actions/upload-artifact@v2.2.0
+        uses: actions/upload-artifact@v3
         with:
           name: xposed.${{ steps.current-time.outputs.formattedTime }}
           path: app/build/outputs/apk/release/*.apk
       - name: Upload Riru Modules
-        uses: actions/upload-artifact@v2.2.0
+        uses: actions/upload-artifact@v3
         with:
           name: magisk.${{ steps.current-time.outputs.formattedTime }}
           path: |
